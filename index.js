@@ -22,7 +22,7 @@ program.command('generate')
   .option('-f, --manifest-file <manifest-file>',
     'The filename (or full path) to save the pact manifest file',
     process.env.MANIFEST_FILE)
-  .option('-t, --manifest-default-tag [pact-default-tag]',
+  .option('-t, --pact-default-tag [pact-default-tag]',
     'The tag to assign by default to pact files when submitting them to broker. Defaults to "develop".',
     process.env.MANIFEST_DEFAULT_TAG)
   .action(async (options) => {
@@ -64,13 +64,15 @@ program.command('publish')
   .option('-p, --broker-password [broker-password]',
     'Pact Broker basic auth password [password]',
     process.env.BROKER_USERNAME)
+  .option('-t, --pact-tag [pact-tag]',
+    'The tag of the pact files to publish. If omitted all the files will be published.',
+    process.env.PACT_TAG)
   .action(async (options) => {
-    const {basePath, consumerAppVersion, manifestFile, brokerBaseUrl, brokerUsername, brokerPassword} = options
+    const {basePath, consumerAppVersion, manifestFile, brokerBaseUrl, brokerUsername, brokerPassword, pactTag} = options
 
     utils.checkMissingFlag('--consumer-app-version', consumerAppVersion)
     utils.checkMissingFlag('--broker-base-url', brokerBaseUrl)
     utils.checkMissingFlag('--manifest-file', manifestFile)
-
     try {
       await manifestClient.publishManifest({
         basePath,
@@ -78,7 +80,8 @@ program.command('publish')
         brokerUsername,
         brokerPassword,
         consumerAppVersion,
-        manifestFile
+        manifestFile,
+        pactTag
       })
       console.log('Successfully published manifest: %s', manifestFile)
     } catch (err) {
