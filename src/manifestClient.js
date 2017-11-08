@@ -11,7 +11,7 @@ module.exports = class ManifestClient {
   static publishManifest (options = {}) {
     return readFileAsync(options.manifestFile)
       .then((manifest) => {
-        return ManifestManager.getManifestsByTag(options.basePath, JSON.parse(manifest))
+        return ManifestManager.getManifestsByTag(options.basePath, JSON.parse(manifest), options.pactTag)
       })
       .then((manifestByTag) => {
         let publishedPacts = []
