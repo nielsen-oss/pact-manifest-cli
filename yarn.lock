@@ -3058,7 +3058,7 @@ package-json@^4.0.0:
     registry-url "^3.0.3"
     semver "^5.1.0"
 
-pact-manifest@^0.0.2:
+pact-manifest@*:
   version "0.0.4"
   resolved "https://nexus.exelator.net/repository/npm-all/pact-manifest/-/pact-manifest-0.0.4.tgz#13864daa5b7cce4197cab95ea90f0795c374e960"
   dependencies:
