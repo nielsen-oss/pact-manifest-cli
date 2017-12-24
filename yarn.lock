@@ -3059,8 +3059,8 @@ package-json@^4.0.0:
     semver "^5.1.0"
 
 pact-manifest@*:
-  version "0.0.4"
-  resolved "https://nexus.exelator.net/repository/npm-all/pact-manifest/-/pact-manifest-0.0.4.tgz#13864daa5b7cce4197cab95ea90f0795c374e960"
+  version "0.0.5"
+  resolved "https://nexus.exelator.net/repository/npm-all/pact-manifest/-/pact-manifest-0.0.5.tgz#1e83dadb44a716a156684e943ac58d11a2ce7980"
   dependencies:
     "@pact-foundation/pact-node" "^4.12.0"
     glob "^7.1.2"

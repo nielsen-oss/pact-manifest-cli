@@ -35,7 +35,7 @@ $ cd backend-api/
 $ pact-manifest-cli publish --manifest-file /tmp/pact-manifest.json --broker-base-url https://mycompany.pact.dius.com.au --broker-username user1 --broker-password password1 --consumer-app-version 1.0.0
 ```
 
-Command line options for `generate` option:
+Command line options for `publish` option:
 
 Option | Description | Example value
 ------------ | ------------- | -------------
