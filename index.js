@@ -64,7 +64,7 @@ program.command('publish')
     process.env.BROKER_USERNAME)
   .option('-p, --broker-password [broker-password]',
     'Pact Broker basic auth password [password]',
-    process.env.BROKER_USERNAME)
+    process.env.BROKER_PASSWORD)
   .option('-t, --pact-tag [pact-tag]',
     'The tag of the pact files to publish. If omitted all the files will be published.',
     process.env.PACT_TAG)
